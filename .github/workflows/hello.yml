@@ -4,7 +4,7 @@ on:
   push:
    branches:
       - main
-   workflow_dispatch: # Allows manual runs via GitHub UI
+  workflow_dispatch: # Allows manual runs via GitHub UI
   pull_request:
     branches:
       - main
@@ -13,6 +13,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-uses: actions/checkout@v3
-name: Run a script
-        run: echo "Hello, GitHub Actions!"
+     - name : Checkout code
+       uses: actions/checkout@v3
+     
+     - name : Run a Script
+       run: echo "Hello, GitHub Actions!"
